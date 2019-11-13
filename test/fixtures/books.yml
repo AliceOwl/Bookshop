@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bookid: 1
+  title: MyText
+  author: MyText
+  avg_rating: 1.5
+  isbn: MyString
+  language_code: MyString
+  num_page: 1
+  rating_count: 1
+  text_review_count: 1
+  price: 1.5
+
+two:
+  bookid: 1
+  title: MyText
+  author: MyText
+  avg_rating: 1.5
+  isbn: MyString
+  language_code: MyString
+  num_page: 1
+  rating_count: 1
+  text_review_count: 1
+  price: 1.5
