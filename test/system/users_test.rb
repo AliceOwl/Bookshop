@@ -22,6 +22,7 @@ class UsersTest < ApplicationSystemTestCase
     fill_in "L name", with: @user.l_name
     fill_in "Password", with: @user.password
     fill_in "User", with: @user.user_id
+    fill_in "Username", with: @user.username
     click_on "Create User"
 
     assert_text "User was successfully created"
@@ -40,6 +41,7 @@ class UsersTest < ApplicationSystemTestCase
     fill_in "L name", with: @user.l_name
     fill_in "Password", with: @user.password
     fill_in "User", with: @user.user_id
+    fill_in "Username", with: @user.username
     click_on "Update User"
 
     assert_text "User was successfully updated"

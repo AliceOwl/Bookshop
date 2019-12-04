@@ -17,7 +17,7 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
 
   test "should create book" do
     assert_difference('Book.count') do
-      post books_url, params: { book: { author: @book.author, avg_rating: @book.avg_rating, bookid: @book.bookid, isbn: @book.isbn, language_code: @book.language_code, num_page: @book.num_page, price: @book.price, rating_count: @book.rating_count, text_review_count: @book.text_review_count, title: @book.title } }
+      post books_url, params: { book: { author: @book.author, avg_rating: @book.avg_rating, book_id: @book.book_id, isbn: @book.isbn, language_code: @book.language_code, num_page: @book.num_page, price: @book.price, rating_count: @book.rating_count, text_review_count: @book.text_review_count, title: @book.title } }
     end
 
     assert_redirected_to book_url(Book.last)
@@ -34,7 +34,7 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update book" do
-    patch book_url(@book), params: { book: { author: @book.author, avg_rating: @book.avg_rating, bookid: @book.bookid, isbn: @book.isbn, language_code: @book.language_code, num_page: @book.num_page, price: @book.price, rating_count: @book.rating_count, text_review_count: @book.text_review_count, title: @book.title } }
+    patch book_url(@book), params: { book: { author: @book.author, avg_rating: @book.avg_rating, book_id: @book.book_id, isbn: @book.isbn, language_code: @book.language_code, num_page: @book.num_page, price: @book.price, rating_count: @book.rating_count, text_review_count: @book.text_review_count, title: @book.title } }
     assert_redirected_to book_url(@book)
   end
 

@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_13_023050) do
+ActiveRecord::Schema.define(version: 2019_11_19_173336) do
 
   create_table "books", force: :cascade do |t|
-    t.integer "bookid"
+    t.integer "book_id"
     t.text "title"
     t.text "author"
     t.float "avg_rating"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2019_11_13_023050) do
 
   create_table "users", force: :cascade do |t|
     t.integer "user_id"
+    t.string "username"
     t.string "f_name"
     t.string "l_name"
     t.text "email"

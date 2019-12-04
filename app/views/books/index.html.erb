@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Bookid</th>
+      <th>Book</th>
       <th>Title</th>
       <th>Author</th>
       <th>Avg rating</th>
@@ -22,7 +22,7 @@
   <tbody>
     <% @books.each do |book| %>
       <tr>
-        <td><%= book.bookid %></td>
+        <td><%= book.book_id %></td>
         <td><%= book.title %></td>
         <td><%= book.author %></td>
         <td><%= book.avg_rating %></td>

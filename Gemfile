@@ -52,3 +52,8 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+group :production do
+  # Pg is the Ruby interface to the {PostgreSQL RDBMS}
+  gem 'pg', '~> 1.1', '>= 1.1.4'
+end

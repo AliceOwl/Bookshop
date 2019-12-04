@@ -16,7 +16,7 @@ class BooksTest < ApplicationSystemTestCase
 
     fill_in "Author", with: @book.author
     fill_in "Avg rating", with: @book.avg_rating
-    fill_in "Bookid", with: @book.bookid
+    fill_in "Book", with: @book.book_id
     fill_in "Isbn", with: @book.isbn
     fill_in "Language code", with: @book.language_code
     fill_in "Num page", with: @book.num_page
@@ -36,7 +36,7 @@ class BooksTest < ApplicationSystemTestCase
 
     fill_in "Author", with: @book.author
     fill_in "Avg rating", with: @book.avg_rating
-    fill_in "Bookid", with: @book.bookid
+    fill_in "Book", with: @book.book_id
     fill_in "Isbn", with: @book.isbn
     fill_in "Language code", with: @book.language_code
     fill_in "Num page", with: @book.num_page
