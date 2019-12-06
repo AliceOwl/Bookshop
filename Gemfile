@@ -10,6 +10,8 @@ gem 'rails', '~> 6.0.1'
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+gem 'font-awesome-sass', '~> 5.11', '>= 5.11.2'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 4.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -20,12 +22,18 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+# gem Uglifier minifies JavaScript files by wrapping UglifyJS to be accessible in Ruby
+gem 'uglifier', '~> 4.2'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
+# Sprockets is a Rack-based asset packaging system that concatenates and serves JavaScript, CoffeeScript, CSS, Sass, and SCSS
+gem 'sprockets', '~> 4.0'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
+
+# This gem provides jQuery and the jQuery-ujs driver for your Rails 4+ application.
+gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
