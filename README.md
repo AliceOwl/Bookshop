@@ -22,3 +22,10 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+yarn add bootstrap jquery popper.js
+npm install material-design-iconic-font
+
+gem install spree (uninstalled)
+
+rake assets:precompile  

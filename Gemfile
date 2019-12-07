@@ -38,10 +38,6 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
 # Flexible authentication solution for Rails with Warden
 gem 'devise', '~> 4.2'
 
-# Spree gems
-gem 'spree', '~> 4.0'
-gem 'spree_auth_devise', '~> 4.0'
-gem 'spree_gateway', '~> 3.6'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
