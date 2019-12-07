@@ -3,8 +3,9 @@
 <head>
 	<title>Bookshop Home</title>
 
-    <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%= javascript_pack_tag 'application' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+	<%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -165,10 +166,11 @@
 		});
 	</script>
 <!--===============================================================================================-->
-	<script src="javascript/main.js"></script>
+	<!--<script src="javascript/main.js"></script> -->
 
   <%= javascript_tag "main" %>
   <%= javascript_tag "map-custom" %>
   <%= javascript_tag "slick-custom" %>
+
   </body>
 </html>
