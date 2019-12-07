@@ -8,8 +8,6 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require ("jquery")
-require ("jquery_ui")
-require ("jquery_ujs")
 require('jquery-ui-bundle');
 require ("bootstrap")
 //require_tree (".")
