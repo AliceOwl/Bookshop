@@ -10,8 +10,8 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.text :password
       t.text :avatar
       t.boolean :admin
-
-      t.timestamps
+      t.datetime "created_at", precision: 6, null: false
+      t.datetime "updated_at", precision: 6, null: false
     end
   end
 end

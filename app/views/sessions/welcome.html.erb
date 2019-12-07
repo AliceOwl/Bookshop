@@ -1,0 +1,17 @@
+<h1>Welcome page</h1>
+
+<% if logged_in? %>
+
+<h1>You are Logged In, <%= current_user.username %></h1>
+
+<p>Welcome to eBookShelf</p>
+
+<%end%>
+
+
+<%= link_to 'New User', new_user_path %>
+
+<%= button_to "Login", '/users/new', method: :get%>
+
+
+

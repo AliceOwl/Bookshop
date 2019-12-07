@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authorized, only: [:new, :create]
 
   # GET /users
   # GET /users.json
@@ -36,6 +37,14 @@ class UsersController < ApplicationController
       end
     end
   end
+
+
+  def createuser   
+    @user = User.create(params.require(:user).permit(:username, :password))
+    session[:user_id] = @user.id
+    #redirect_to '/welcome'
+  end
+
 
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json

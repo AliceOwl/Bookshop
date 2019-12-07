@@ -29,6 +29,8 @@ gem 'uglifier', '~> 4.2'
 # Sprockets is a Rack-based asset packaging system that concatenates and serves JavaScript, CoffeeScript, CSS, Sass, and SCSS
 gem 'sprockets', '~> 3.7'
 
+gem 'bcrypt', '~> 3.1', '>= 3.1.13'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
