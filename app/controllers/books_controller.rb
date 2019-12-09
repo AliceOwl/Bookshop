@@ -72,3 +72,19 @@ class BooksController < ApplicationController
       params.require(:book).permit(:book_id, :title, :author, :avg_rating, :isbn, :language_code, :num_page, :rating_count, :text_review_count, :price)
     end
 end
+
+class BookCover
+
+  include HTTPparty
+  # Searching The chosen API with the following link
+  base_uri "covers.openlibrary.org/b/isbn/"
+
+  def posts
+    self.class.get('/posts.json')
+  end
+end
+
+# Create a variable and a new instance of the class:
+book_cover = BookCover.new
+# to call the method:
+puts book_cover.posts

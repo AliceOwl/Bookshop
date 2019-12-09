@@ -38,6 +38,8 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
 # Flexible authentication solution for Rails with Warden
 gem 'devise', '~> 4.2'
 
+# Makes http fun! Also, makes consuming restful web services dead easy.
+gem 'httparty', '~> 0.13.7'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
