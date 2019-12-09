@@ -73,18 +73,18 @@ class BooksController < ApplicationController
     end
 end
 
-class BookCover
+#class BookCover
 
-  include HTTPparty
+  #include HTTPparty
   # Searching The chosen API with the following link
-  base_uri "covers.openlibrary.org/b/isbn/"
+  #base_uri "covers.openlibrary.org/b/isbn/"
 
-  def posts
-    self.class.get('/posts.json')
-  end
-end
+  #def posts
+   # self.class.get('/posts.json')
+  #end
+#end
 
 # Create a variable and a new instance of the class:
-book_cover = BookCover.new
+#book_cover = BookCover.new
 # to call the method:
-puts book_cover.posts
+#puts book_cover.posts
