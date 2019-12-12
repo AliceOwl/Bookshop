@@ -1,0 +1,55 @@
+<h1>Shops#show</h1>
+<p>Find me in app/views/shops/show.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Book:</strong>
+  <%= @book.book_id %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @book.title %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @book.author %>
+</p>
+
+<p>
+  <strong>Avg rating:</strong>
+  <%= @book.avg_rating %>
+</p>
+
+<p>
+  <strong>Isbn:</strong>
+  <%= @book.isbn %>
+</p>
+
+<p>
+  <strong>Language code:</strong>
+  <%= @book.language_code %>
+</p>
+
+<p>
+  <strong>Num page:</strong>
+  <%= @book.num_page %>
+</p>
+
+<p>
+  <strong>Rating count:</strong>
+  <%= @book.rating_count %>
+</p>
+
+<p>
+  <strong>Text review count:</strong>
+  <%= @book.text_review_count %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @book.price %>
+</p>
+
+<%= link_to 'Back', root_path %>

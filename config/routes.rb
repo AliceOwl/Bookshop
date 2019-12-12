@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
 
+  get 'shops/index'
+  get 'shops/show'
   root 'home#index'
 
-  resources :orders
-  resources :users
   resources :books
-
+  resources :shops, only: [:index, :show]
+  resources :order_items
   
 
   get 'home/index'

@@ -7,12 +7,12 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-require ("jquery")
-require('jquery-ui-bundle');
-require ("bootstrap")
+require("jquery")
+require("jquery-ui-bundle")
+require("bootstrap")
 //require_tree (".")
 
-require ("main")
+
 require ("map-custom")
 require ("slick-custom")
 
@@ -23,6 +23,29 @@ document.addEventListener("turbolinks:load", () => {
     $('[data-toggle="tooltip"]').tooltip()
     $('[data-toggle="popover"]').popover()
 })
+
+//require("packs/main")
+
+require("custom/animsition")
+require("custom/tooltip")
+require("custom/countdowntime")
+require("custom/map-custom")
+require("custom/slick-custom")
+require("custom/daterangepicker")
+require("custom/moment")
+require("custom/isotope.pkgd")
+require("custom/main")
+require("custom/jquery-ui")
+require("custom/lightbox")
+require("custom/lightbox-plus-jquery")
+require("custom/jquery.magnific-popup")
+require("custom/parallax100")
+require("custom/perfect-scrollbar.min")
+require("custom/select2")
+require("custom/slick")
+require("custom/sweetalert.min")
+
+
 //import "../stylesheets/application"
 
 // Uncomment to copy all static images under ../images to the output folder and reference
