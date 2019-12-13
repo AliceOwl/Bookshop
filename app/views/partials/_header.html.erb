@@ -85,6 +85,7 @@
 							<div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
 								<% if user_signed_in? %>
 								<a class="dropdown-item" <%= link_to 'Edit Account', edit_user_registration_path  %></a>
+								<a class="dropdown-item" <%= link_to 'Posts', posts_path  %></a>
 								<a class="dropdown-item"<%= link_to 'Logout', destroy_user_session_path, method: :get %></a>
 								  <% else %>
 								<a class="dropdown-item"<%= link_to 'Login', new_user_session_path %></a>

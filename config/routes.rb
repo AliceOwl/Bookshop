@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :posts
   devise_for :users
   get 'shops/index'
   get 'shops/show'

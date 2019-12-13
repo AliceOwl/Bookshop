@@ -55,3 +55,22 @@ In this case Spring was run to edit admin role permissions.
 rails c
 
 @user = User.first
+
+@user.admin = true
+
+ctrl + d to exit
+
+
+To get the username form email:
+
+app/models/user.rb:
+
+within the User class create:
+
+
+    def username
+        return self.email.split('@')[0].capitalize
+    end
+
+and then call .user.username where needed. 
+example form show.html.erb:
