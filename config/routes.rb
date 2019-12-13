@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   resources :shops, only: [:index, :show]
   resources :order_items
   
-  match '/users/:id', :to => 'users#destroy', :as => :destroy_user, :via => :delete
+  #match '/users/:id', :to => 'users#destroy', :as => :destroy_user, :via => :delete
+  #devise_for :users, :controllers => { :sessions => "users/sessions" }
 
   get 'home/index'
   get 'home/productdetail'
