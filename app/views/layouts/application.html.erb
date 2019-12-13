@@ -51,9 +51,6 @@
 <!--<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">-->
 	
 
-
-
-
 </head>
   <body class="animsition">
 
@@ -176,12 +173,13 @@
   <%= javascript_tag "slick-custom" %>
 
 
-<script type="text/javascript">
+  </body>
+
+<!--This was an attempt to resolve an issue of links (pages need to be reloaded manually)-->
+  <script type="text/javascript">
 //https://stackoverflow.com/questions/6160415/reload-an-html-page-just-once-using-javascript
    if(window.location.href.substr(-2) !== "?r") {
       window.location = window.location.href + "?r";
     }
 </script>
-
-  </body>
 </html>

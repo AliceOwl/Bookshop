@@ -38,6 +38,9 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
 # Flexible authentication solution for Rails with Warden
 gem 'devise', '~> 4.2'
 
+#This gem generates nicer default views styled with Bootstrap so you have a bit of a better starting point for your app.
+#gem 'devise-bootstrapped', '~> 0.1.1'
+
 # Makes http fun! Also, makes consuming restful web services dead easy.
 gem 'httparty', '~> 0.13.7'
 
