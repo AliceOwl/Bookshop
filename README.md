@@ -43,3 +43,15 @@ The cover access by ids other than CoverID and OLID are rate-limited. Currently 
 If any IP tries to access more that the allowed limit, the service will return "403 Forbidden" status.
 
 https://openlibrary.org/dev/docs/api/covers
+
+
+
+
+
+Spring is a Rails application preloader that speeds up development by keeping your application running in the background. This means you that don't need to restart a server when you make changes. In RubyMine, Spring can be used to run Rails generators, tests, and Rake tasks.
+
+In this case Spring was run to edit admin role permissions.
+
+rails c
+
+@user = User.first
