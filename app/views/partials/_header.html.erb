@@ -78,16 +78,31 @@
 							<i class="zmdi zmdi-favorite-outline"></i>
 						</a>
 						
+
+						<% if user_signed_in? %>
+						<% @AuthUser = current_user.username %>
+						<% else %>
+						<% @AuthUser = "Guest" %>
+						<% end %>
+
 						<li class="nav-item dropdown">
 						<a class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11  nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<i class="zmdi zmdi-account-circle"></i>
+							<i class="zmdi zmdi-account-circle" style="font: cursive; color: gold; font-size: 25px">&nbsp;<%= @AuthUser %></i>
 						</a>
 							<div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
 								<% if user_signed_in? %>
-								<a class="dropdown-item" <%= link_to 'Edit Account', edit_user_registration_path  %></a>
+								
+								 <% if current_user.admin == TRUE %>
+								<a class="dropdown-item" <%= link_to 'Admin Controls', admin_index_path  %></a>
+								<a class="dropdown-item" <%= link_to 'Settings', edit_user_registration_path  %></a>
+								<a class="dropdown-item" <%= link_to 'Posts', posts_path  %></a>
+								<a class="dropdown-item"<%= link_to 'Logout', destroy_user_session_path, method: :get %></a
+								<% else %>
+								<a class="dropdown-item" <%= link_to 'Settings', edit_user_registration_path  %></a>
 								<a class="dropdown-item" <%= link_to 'Posts', posts_path  %></a>
 								<a class="dropdown-item"<%= link_to 'Logout', destroy_user_session_path, method: :get %></a>
-								  <% else %>
+								<% end %>
+								<% else %>
 								<a class="dropdown-item"<%= link_to 'Login', new_user_session_path %></a>
 								<a class="dropdown-item" <%= link_to 'Sign Up', new_user_registration_path  %></a>
 								<% end %>
@@ -303,7 +318,6 @@
   <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
   <p class="notice"><%= notice %></p>
    <p class="alert"><%= alert %></p>
-  <strong>Success!</strong> 
 
 </div>
 
