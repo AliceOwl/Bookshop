@@ -41,6 +41,9 @@ gem 'devise', '~> 4.2'
 # RailsAdmin is a Rails engine that provides an easy-to-use interface for managing your data.
 gem 'rails_admin', '~> 2.0'
 
+# A modern override of default bootstrap 3 rails_admin theme. It provides news colors, adjustments and a brand new tree view menu. Source: https://github.com/rollincode/rails_admin_theme
+gem 'rails_admin_rollincode', '~> 1.0'
+
 #This gem generates nicer default views styled with Bootstrap so you have a bit of a better starting point for your app.
 #gem 'devise-bootstrapped', '~> 0.1.1'
 
