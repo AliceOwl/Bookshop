@@ -27,6 +27,8 @@ Rails.application.routes.draw do
   get 'home/productdetail'
   get 'home/product'
   get 'home/chart'
+  get 'home/contact'
+  get 'home/stories'
   
   
   

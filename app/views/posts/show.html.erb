@@ -1,20 +1,50 @@
 <p id="notice"><%= notice %></p>
 <%= render partial: "partials/banner", locals: { banner: @banner } %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
 
-<p>
-  <strong>Body:</strong>
-  <%= @post.body %>
-</p>
 
-<p>
-  <strong>User:</strong>
-  <%= @post.user.username %>
-</p>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+
+	<section class="bg0 p-t-62">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-lg-12">
+					<div class="p-r-45 p-r-0-lg">
+						<!-- item blog -->
+						<div class="p-b-63">
+							<div class="p-t-32">
+								<h4 class="p-b-15">
+									<a href="#" class="ltext-108 cl2 hov-cl1 trans-04"></a>
+								</h4>
+                    <p>
+                    <strong>Title:</strong>
+                    <%= @post.title %>
+                  </p>
+
+                  <p>
+                    <strong>Body:</strong>
+                    <%= @post.body %>
+                  </p>
+
+                  <p>
+                    <strong>User:</strong>
+                    <%= @post.user.username %>
+                  </p>
+
+                  <%= link_to 'Edit', edit_post_path(@post) %> |
+                  <%= link_to 'Back', posts_path %>
+
+								<p class="stext-117 cl6">
+									Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce eget dictum tortor. Donec dictum vitae sapien eu varius
+								</p>
+							</div>
+						</div>            
+                    <div align="center">
+                </div>
+            <br>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</section>

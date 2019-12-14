@@ -1,28 +1,58 @@
-<%= render partial: "partials/banner", locals: { banner: @banner } %>
-<%= form_with(model: post, local: true) do |form| %>
-  <% if post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-      <ul>
-        <% post.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+<!-- Content page -->
+	<section class="bg0 p-t-62">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-lg-12">
+					<div class="p-r-45 p-r-0-lg">
+						<!-- item blog -->
+						<div class="p-b-63">
+							<div class="p-t-32">
+								<h4 class="p-b-15">
+									<a href="#" class="ltext-108 cl2 hov-cl1 trans-04">
+									</a>
+								</h4>
+                             <%= form_with(model: post, local: true) do |form| %>
+                          <% if post.errors.any? %>
+                            <div id="error_explanation">
+                              <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+                              <ul>
+                                <% post.errors.full_messages.each do |message| %>
+                                  <li><%= message %></li>
+                                <% end %>
+                              </ul>
+                            </div>
+                          <% end %>
+
+                          <div class="field">
+                            <%= form.label :title %>
+                            <%= form.text_field :title %>
+                          </div>
+
+                          <div class="field">
+                            <%= form.label :body %>
+                            <%= form.text_area :body %>
+                          </div>
+
+                          <div class="actions">
+                            <%= form.submit %>
+                          </div>
+                        <% end %>
+
+								<p class="stext-117 cl6">
+									Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce eget dictum tortor. Donec dictum vitae sapien eu varius
+								</p>
+							</div>
+						</div>            
+                    <div align="center">
+                </div>
+            <br>
+        </div>
     </div>
-  <% end %>
+</div>
+</div>
+</div>
+</section>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
 
-  <div class="field">
-    <%= form.label :body %>
-    <%= form.text_area :body %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
