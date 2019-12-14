@@ -13,7 +13,7 @@ def product
     @product = Book.order("RANDOM()").limit(16);
 
     @product.each do |book| 
-    
+        
     end
 end
 
@@ -28,9 +28,9 @@ def productdetail
         @isbn << book.isbn 
     end
 
-
-
 end
 
+def profile
+end
 
 end

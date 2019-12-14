@@ -30,10 +30,6 @@
 					<!-- Menu desktop -->
 					<div class="menu-desktop">
 						<ul class="main-menu" >
-							<li class="active-menu">
-								<a href="/home/index" style="font-family: Yesteryear, cursive; color: gold; font-size: 30px">Home</a>
-							</li>
-
 							<li>
 								<a href="/home/product" style="font-family: Yesteryear, cursive; color: gold; font-size: 30px">Shop</a>
 								<ul class="sub-menu">
@@ -94,10 +90,13 @@
 								
 								 <% if current_user.admin == TRUE %>
 								<a class="dropdown-item" <%= link_to 'Admin Controls', admin_index_path  %></a>
+								<a class="dropdown-item"<%= link_to 'My Profile', home_profile_path %></a>
 								<a class="dropdown-item" <%= link_to 'Profile Settings', edit_user_registration_path  %></a>
 								<a class="dropdown-item" <%= link_to 'My Notes', posts_path  %></a>
-								<a class="dropdown-item"<%= link_to 'Logout', destroy_user_session_path, method: :get %></a
+								<a class="dropdown-item"<%= link_to 'Logout', destroy_user_session_path, method: :get %></a>
+								
 								<% else %>
+								<a class="dropdown-item"<%= link_to 'My Profile', home_profile_path %></a>
 								<a class="dropdown-item" <%= link_to 'Settings', edit_user_registration_path  %></a>
 								<a class="dropdown-item" <%= link_to 'Posts', posts_path  %></a>
 								<a class="dropdown-item"<%= link_to 'Logout', destroy_user_session_path, method: :get %></a>

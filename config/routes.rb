@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   devise_for :users
   get 'shops/index'
   get 'shops/show'
+
   root 'home#index'
 
   resources :books
@@ -18,8 +19,9 @@ Rails.application.routes.draw do
   get 'home/productdetail'
   get 'home/product'
   
+  
   get 'admin/index'
-
+  get 'home/profile'
 
   get 'books/index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
