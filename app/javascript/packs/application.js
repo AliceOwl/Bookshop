@@ -13,7 +13,7 @@ require("bootstrap")
 //require_tree (".")
 require("chartkick")
 require("chart.js")
-
+require("Chart.bundle")
 require ("map-custom")
 require ("slick-custom")
 
