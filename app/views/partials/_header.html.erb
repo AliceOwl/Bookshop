@@ -94,8 +94,8 @@
 								
 								 <% if current_user.admin == TRUE %>
 								<a class="dropdown-item" <%= link_to 'Admin Controls', admin_index_path  %></a>
-								<a class="dropdown-item" <%= link_to 'Settings', edit_user_registration_path  %></a>
-								<a class="dropdown-item" <%= link_to 'Posts', posts_path  %></a>
+								<a class="dropdown-item" <%= link_to 'Profile Settings', edit_user_registration_path  %></a>
+								<a class="dropdown-item" <%= link_to 'My Notes', posts_path  %></a>
 								<a class="dropdown-item"<%= link_to 'Logout', destroy_user_session_path, method: :get %></a
 								<% else %>
 								<a class="dropdown-item" <%= link_to 'Settings', edit_user_registration_path  %></a>
