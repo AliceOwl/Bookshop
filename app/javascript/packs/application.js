@@ -11,7 +11,8 @@ require("jquery")
 require("jquery-ui-bundle")
 require("bootstrap")
 //require_tree (".")
-
+require("chartkick")
+require("chart.js")
 
 require ("map-custom")
 require ("slick-custom")
