@@ -1,5 +1,5 @@
 module ApplicationHelper
-
+include Pagy::Frontend
 
 
     def current_order

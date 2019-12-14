@@ -28,30 +28,26 @@ gem 'uglifier', '~> 4.2'
 # gem 'image_processing', '~> 1.2'
 # Sprockets is a Rack-based asset packaging system that concatenates and serves JavaScript, CoffeeScript, CSS, Sass, and SCSS
 gem 'sprockets', '~> 3.7'
-
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
-
 # This gem provides jQuery and the jQuery-ujs driver for your Rails 4+ application.
 gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
-
 # Flexible authentication solution for Rails with Warden
 gem 'devise', '~> 4.2'
-
 # RailsAdmin is a Rails engine that provides an easy-to-use interface for managing your data.
 gem 'rails_admin', '~> 2.0'
-
 # A modern override of default bootstrap 3 rails_admin theme. It provides news colors, adjustments and a brand new tree view menu. Source: https://github.com/rollincode/rails_admin_theme
 gem 'rails_admin_rollincode', '~> 1.0'
-
 #This gem generates nicer default views styled with Bootstrap so you have a bit of a better starting point for your app.
 #gem 'devise-bootstrapped', '~> 0.1.1'
-
 # Makes http fun! Also, makes consuming restful web services dead easy.
 gem 'httparty', '~> 0.13.7'
-
 # Create beautiful JavaScript charts with one line of Ruby
 gem 'chartkick', '~> 3.3'
+# Agnostic pagination in plain ruby: it works with any framework, ORM and DB type, with all kinds of collections, even pre-paginated, scopes, Arrays, JSON data... and just whatever you can count. Easy to use and customize, very fast and very light.
+gem 'pagy', '~> 0.6.0'
+
+gem 'jquery-datatables'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

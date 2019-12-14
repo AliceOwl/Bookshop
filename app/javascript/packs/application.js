@@ -19,6 +19,8 @@ require ("slick-custom")
 
 import "bootstrap"
 import "../stylesheets/application"
+import '../src/javascripts/pagy.js.erb'
+
 
 document.addEventListener("turbolinks:load", () => {
     $('[data-toggle="tooltip"]').tooltip()
@@ -45,6 +47,7 @@ require("custom/perfect-scrollbar.min")
 require("custom/select2")
 require("custom/slick")
 require("custom/sweetalert.min")
+//require("pagy")
 
 
 //import "../stylesheets/application"

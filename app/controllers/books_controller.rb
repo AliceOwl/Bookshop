@@ -1,10 +1,12 @@
 class BooksController < ApplicationController
+  include Pagy::Backend
+
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
   # GET /books
   # GET /books.json
   def index
-    @books = Book.all
+    @pagy, @books = pagy(Book.all, items: 10)
   end
 
   # GET /books/1
