@@ -7,6 +7,8 @@ class BooksController < ApplicationController
   # GET /books.json
   def index
     @pagy, @books = pagy(Book.all, items: 10)
+      search = params[:search]
+      @book_search = Book.where('title like ?', "%#{search}%")
   end
 
   # GET /books/1

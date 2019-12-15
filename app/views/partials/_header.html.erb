@@ -88,7 +88,7 @@
 							<div class="dropdown-menu dropdown-menu-right dropdown-info" aria-labelledby="navbarDropdownMenuLink-4">
 								<% if user_signed_in? %>
 								
-								 <% if current_user.admin == TRUE %>
+								 <% if current_user.admin == true %>
 								<a class="dropdown-item" <%= link_to 'Admin Controls', admin_index_path  %></a>
 								<a class="dropdown-item"<%= link_to 'My Profile', home_profile_path %></a>
 								<a class="dropdown-item" <%= link_to 'Profile Settings', edit_user_registration_path  %></a>

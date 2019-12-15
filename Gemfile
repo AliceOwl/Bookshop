@@ -43,11 +43,13 @@ gem 'rails_admin_rollincode', '~> 1.0'
 # Makes http fun! Also, makes consuming restful web services dead easy.
 gem 'httparty', '~> 0.13.7'
 # Create beautiful JavaScript charts with one line of Ruby
-gem 'chartkick', '~> 3.3'
+gem 'chartkick'
 # Agnostic pagination in plain ruby: it works with any framework, ORM and DB type, with all kinds of collections, even pre-paginated, scopes, Arrays, JSON data... and just whatever you can count. Easy to use and customize, very fast and very light.
 gem 'pagy', '~> 0.6.0'
 
 gem 'jquery-datatables'
+
+gem 'highcharts-rails', '~> 6.0', '>= 6.0.3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

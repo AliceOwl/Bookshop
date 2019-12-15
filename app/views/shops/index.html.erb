@@ -14,7 +14,7 @@
 				
 						<!-- item blog -->
 								<h4 class="p-b-15">
-									<a href="blog-detail.html" class="ltext-108 cl2 hov-cl1 trans-04">
+									<a href="#" class="ltext-108 cl2 hov-cl1 trans-04">
 										Shop with us
 									</a>
 								</h4>
@@ -22,6 +22,41 @@
 								<p class="stext-117 cl6">
 									Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce eget dictum tortor. Donec dictum vitae sapien eu varius
 								</p>
+
+
+
+<!-- Search form -->
+
+<style> 
+input[type=text] {
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  display: block;
+}
+
+input[type=text]:focus {
+  width: 100%;
+}
+</style>
+           <form> 
+          <%= form_tag shops_path, :method => 'get' do %>
+              <%= content_tag :label do %>
+                Search for a book:
+                <input type="text" name="search" placeholder="Search.."<%= text_field_tag :search, params[:search] %>
+                <button type="button" class="btn btn-outline-dark" style="display: block"<%= submit_tag("Search") %>Search</button>
+              <% end %>
+            <% end %>
+         </form>
             <!--Book table section-->
             <h1 class="txt-center">Books on the shelf:</h1>
             <table id="dttb" class="table table-striped table-bordered">
@@ -70,14 +105,14 @@
                 <%== pagy_nav(@pagy) %>
                 <% if user_signed_in? %>
                 <% if current_user.admin == TRUE %>
-                <button type="button" class="btn btn-info" <%= link_to 'New Book', new_book_path %></button>
+                <!--<button type="button" class="btn btn-info" <%= link_to 'New Book', new_book_path %></button> -->
                 <% end %>
                 <% end %>
                 <br>
-                <%= link_to "#{current_order.order_items.size} items with a value of £", carts_path%>
+          
             </div>
 
-          
+                <%= link_to "#{current_order.order_items.size} items with a value of £", carts_path%>
 				</div>
 			</div>
 		</div>
