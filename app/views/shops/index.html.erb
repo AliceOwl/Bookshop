@@ -23,8 +23,6 @@
 									Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce eget dictum tortor. Donec dictum vitae sapien eu varius
 								</p>
 
-
-
 <!-- Search form -->
 
 <style> 
@@ -66,11 +64,12 @@ input[type=text]:focus {
                   <th>Author</th>
                   <th>Avg rating</th>
                   <th>Price</th>
+				          <th>Image</th>
                   <th>Details</th>
                   <th>Quantity</th>
                   <th>Add to Cart</th>
                   <% if user_signed_in? %>
-                  <% if current_user.admin == TRUE %>
+                  <% if current_user.admin == true %>
                   <th>Edit</th>
                   <th>Destroy</th>
                   <% end %>
@@ -79,32 +78,36 @@ input[type=text]:focus {
               </thead>
               <tbody>
               <% @books.each do |book| %>
+			        <% if notice %>
+			        <aside id="notice"><%= notice %></aside>
+			        <% end %>
                 <tr>
                   <td><%= book.title %></td>
                   <td><%= book.author %></td>
                   <td><%= book.avg_rating %></td>
                   <td><%= book.price %></td>
+				          <td><%= image_tag("http://covers.openlibrary.org/b/isbn/#{book.isbn}-S.jpg") %></td>
                   <td><button type="button" class="btn btn-outline-info"><%= link_to 'Show', book %></button></td>
                   <%= form_for @order_item do |f|%>
                   <%= f.hidden_field :book_id, :value => book.id %>
                   <td><%= f.number_field :quantity, :value => 1, :main => 1%></td>
                   <td><button type="button" class="btn btn-outline-success"><%= f.submit ""%>Add to Cart</button></td>
-                   <% end %>
-                <% if user_signed_in? %>
-                <% if current_user.admin == TRUE %>
+                   <% end %> 
+                   <% if user_signed_in? %>
+                   <% if current_user.admin == true %>
                   <td><button type="button" class="btn btn-outline-dark"><%= link_to 'Edit', edit_book_path(book) %></button></td>
                   <td><button type="button" class="btn btn-outline-danger"><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
-                <% end %>
-                <% end %>
+                  <% end %>
+                  <% end %>
                 </tr>
-              <% end %>
+              <% end %> 
               </tbody>
             </table>
             <br>
             <div align="center">
                 <%== pagy_nav(@pagy) %>
                 <% if user_signed_in? %>
-                <% if current_user.admin == TRUE %>
+                <% if current_user.admin == true %>
                 <!--<button type="button" class="btn btn-info" <%= link_to 'New Book', new_book_path %></button> -->
                 <% end %>
                 <% end %>
@@ -113,12 +116,14 @@ input[type=text]:focus {
             </div>
 
                 <%= link_to "#{current_order.order_items.size} items with a value of £", carts_path%>
-				</div>
-			</div>
-		</div>
-	</section>
+        </div>
+      </div>
+    </div>
+  </section>
         <br>
 
 
 
-	
+
+
+                                                                                                                                                     

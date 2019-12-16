@@ -1,14 +1,21 @@
 class BooksController < ApplicationController
+  
   include Pagy::Backend
 
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
   # GET /books
   # GET /books.json
-  def index
-    @pagy, @books = pagy(Book.all, items: 10)
-      search = params[:search]
-      @book_search = Book.where('title like ?', "%#{search}%")
+
+
+
+
+   def index
+    def index
+      @pagy, @books = pagy(Book.all, items: 10)
+        search = params[:search]
+        @book_search = Book.where('title like ?', "%#{search}%")
+        end
   end
 
   # GET /books/1
