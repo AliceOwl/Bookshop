@@ -1,4 +1,4 @@
-
+<article>
 <% if notice %>
 <aside id="notice"><%=notice%></aside>
 <% end %>
@@ -9,12 +9,24 @@
     <aside id="notice"><%= notice %></aside>
 <% end %> -->
 
-<ul>
-    <% @cart.line_items.each do |item| %>
-    <li><%= item.quantity %> &times; <%= item.book.title %></li>
-    <%= item.book.isbn %>
+<table>
+
+    <% @cart.line_items.each do |line_item| %>
+    <tr>
+    <td class="quantity"> <%= line_item.quantity %></td>
+    <td><%= line_item.book.title %></td>
+    <td class="price"><%= number_to_currency(line_item.total_price)%></td>
+    </tr>
     <% end %>
-</ul>
+    <tfoot>
+    <tr>
+    <th colspan="2">Total:</th>
+    <td class="price"><%= number_to_currency(@cart.total_price)%></td>
+    </tr>
+    </tfoot>
+    </table>
+</article>
+
 
 <%= link_to 'Edit', edit_cart_path(@cart) %> |
 <%= link_to 'Back', shops_index_path %>
@@ -134,7 +146,7 @@
 						<div class="wrap-table-shopping-cart">
 							<table class="table-shopping-cart">
 								<tr class="table_head">
-									<th class="column-1">Product</th>
+									<th class="column-1">Image</th>
 									<th class="column-2">Title</th>
 									<th class="column-3">Price</th>
 									<th class="column-4">Quantity</th>
@@ -187,9 +199,9 @@
                             <div class="flex-c-m stext-101 cl2 size-119 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-10">
 								Update Cart
 							</div>
-                            <div class="flex-c-m stext-101 cl2 size-119 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-10"> <%= button_to 'Empty cart', @cart, method: :delete, data: { confirm: 'Are you sure?' } %>
+                            
+							<button type="button" class="btn btn-outline-danger"><%= button_to 'Empty cart', @cart, method: :delete, data: { confirm: 'Are you sure?' } %></button>
 							
-							</div>
                             
 						</div>
 					</div>
@@ -210,7 +222,7 @@
 
 							<div class="size-209">
 								<span class="mtext-110 cl2">
-									$79.65
+									£<%= @cart.total_price%>
 								</span>
 							</div>
 						</div>
@@ -268,7 +280,7 @@
 
 							<div class="size-209 p-t-1">
 								<span class="mtext-110 cl2">
-									$79.65
+									£<%= @cart.total_price%>
 								</span>
 							</div>
 						</div>
