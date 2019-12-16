@@ -9,6 +9,8 @@ class ShopsControllerTest < ActionDispatch::IntegrationTest
   test "should get show" do
     get shops_show_url
     assert_response :success
+    assert_select 'table.ddtb', minimum: 7
+    assert_select 'h1', 'Books'
   end
 
 end
