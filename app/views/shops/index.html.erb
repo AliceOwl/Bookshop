@@ -45,6 +45,25 @@ input[type=text] {
 input[type=text]:focus {
   width: 100%;
 }
+
+.cart {
+  font-size: 1.414em;
+}
+
+  input[type="submit"] {
+    background-color: #282;
+    border-radius: 0.354em;
+    border: solid thin #141;
+    color: white;
+    font-size: 1em;
+    padding: o.354em 1em;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #141;
+  }
+
+
 </style>
            <form> 
           <%= form_tag shops_path, :method => 'get' do %>
@@ -66,7 +85,7 @@ input[type=text]:focus {
                   <th>Price</th>
 				          <th>Image</th>
                   <th>Details</th>
-                  <th>Quantity</th>
+                 <!-- <th>Quantity</th>-->
                   <th>Add to Cart</th>
                   <% if user_signed_in? %>
                   <% if current_user.admin == true %>
@@ -89,17 +108,18 @@ input[type=text]:focus {
                   <td><%= book.avg_rating %></td>
                   <td>£<%= book.price %></td>
 				          <td><%= image_tag("http://covers.openlibrary.org/b/isbn/#{book.isbn}-S.jpg") %></td>
-                  <td><button type="button" class="btn btn-outline-info"<%= link_to 'Show', book %></button></td>
-                  <%= form_for @order_item do |f|%>
+                  <td><button type="button" class="btn btn-outline-info"><%= link_to 'Show', book %></button></td>
+                  <!--<%= form_for @order_item do |f|%>
                   <%= f.hidden_field :book_id, :value => book.id %>
-                  <td><%= f.number_field :quantity, :value => 1, :main => 1%></td>
+                  <td><%= f.number_field :quantity, :value => 1, :main => 1%></td> -->
                   <!--<td><button type="button" class="btn btn-outline-success"><%= f.submit ""%>Add to Cart</button></td> -->
-                  <td><button type="button" class="btn btn-outline-success"><% button_to 'Add to Cart', line_items_path(book_id: book) %>Add to Cart</button></td>
+                  <td><%= button_to "Add To Cart".html_safe, line_items_path(book_id: book), class: "btn btn-outline-success" %></td>
+
                   <% end %> 
                    <% if user_signed_in? %>
                    <% if current_user.admin == true %>
-                    <td><button type="button" class="btn btn-outline-dark"<%= link_to 'Edit', edit_book_path(book) %></button></td>
-                    <td><button type="button" class="btn btn-outline-danger"<%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
+                    <td><button type="button" class="btn btn-outline-dark"><%= link_to 'Edit', edit_book_path(book) %></button></td>
+                    <td><button type="button" class="btn btn-outline-danger"><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
                   <% end %>
                   <% end %>
                   <% end %>

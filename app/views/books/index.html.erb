@@ -64,7 +64,7 @@
                 </tr>
               </thead>
               <tbody>
-              <% cache @books do %>
+              
               <% @books.each do |book| %>
                <% cache book do %>
                 <tr>
@@ -78,15 +78,15 @@
                   <td><%= book.text_review_count %></td>
                   <td><%= book.price %></td>
                   <td><%= image_tag("http://covers.openlibrary.org/b/isbn/#{book.isbn}-S.jpg") %></td>
-                  <td><button type="button" class="btn btn-outline-info"<%= link_to 'Show', book %></button></td>
+                  <td><button type="button" class="btn btn-outline-info"><%= link_to 'Show', book %></button></td>
                 <% if user_signed_in? %>
                 <% if current_user.admin == true %>
-                  <td><button type="button" class="btn btn-outline-dark"<%= link_to 'Edit', edit_book_path(book) %></button></td>
-                  <td><button type="button" class="btn btn-outline-danger"<%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
+                  <td><button type="button" class="btn btn-outline-dark"><%= link_to 'Edit', edit_book_path(book) %></button></td>
+                  <td><button type="button" class="btn btn-outline-danger"><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
                 <% end %>
                 <% end %>
                 <% end %>
-                <% end %>
+          
                 </tr>
               <% end %>
               </tbody>

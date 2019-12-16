@@ -31,6 +31,7 @@ Rails.application.routes.draw do
   get 'home/chart'
   get 'home/contact'
   get 'home/stories'
+  get 'line_items/create'
   
   
   

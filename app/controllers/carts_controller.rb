@@ -25,7 +25,7 @@ class CartsController < ApplicationController
   # POST /carts.json
   def create
     @cart = Cart.new(cart_params)
-
+    puts "............................"
     respond_to do |format|
       if @cart.save
         format.html { redirect_to @cart, notice: 'Cart was successfully created.' }
@@ -72,13 +72,5 @@ class CartsController < ApplicationController
       params.fetch(:cart, {})
     end
 
-    module CurrentCart
-      private
-      def set_cart
-        @cart = Cart.find(session[:cart_id])
-      rescue ActiveRecord::RecordNotFound
-        @cart = Cart.create
-        session[:cart_id] = @cart.id
-      end
-    end
+    
 end
