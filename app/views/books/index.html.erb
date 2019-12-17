@@ -64,19 +64,19 @@
                 </tr>
               </thead>
               <tbody>
-              <% cache @books do %>
+             
               <% @books.each do |book| %>
                <% cache book do %>
                 <tr>
                   <td><%= book.title %></td>
                   <td><%= book.author %></td>
-                  <td><%= book.avg_rating %></td>
+                  <td><%= book.avg_rating %>/5</td>
                   <td><%= book.isbn %></td>
                   <td><%= book.language_code %></td>
                   <td><%= book.num_page %></td>
                   <td><%= book.rating_count %></td>
                   <td><%= book.text_review_count %></td>
-                  <td><%= book.price %></td>
+                  <td>£<%= book.price %></td>
                   <td><%= image_tag("http://covers.openlibrary.org/b/isbn/#{book.isbn}-S.jpg") %></td>
                   <td><button type="button" class="btn btn-outline-info"><%= link_to 'Show', book %></button></td>
                 <% if user_signed_in? %>
@@ -86,7 +86,7 @@
                 <% end %>
                 <% end %>
                 <% end %>
-                <% end %>
+                
           
                 </tr>
               <% end %>

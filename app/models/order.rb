@@ -1,16 +1,17 @@
 class Order < ApplicationRecord
-    has_many :order_items
-    belongs_to :user
-    before_save :set_subtotal
+    has_many :line_items, dependent: :destroy
+    enum pay_type: {
+        "Check" => 0,
+        "Credit card" => 1,
+        "Purchase order" => 2
+    }
 
- 
-     def subtotal
-         order_items.collect{|order_item| order_item.valid? ? order_item.unit_price*order_item.quantity : 0}.sum
-     end
- 
-     private
- 
-     def set_subtotal
-         self[:subtotal] = subtotal
-     end
+
+    def add_line_items_from_cart(cart)
+        cart.line_items.each do |item|
+            item.cart_id = nil
+            line_items << item
+        end
+    end
+
 end

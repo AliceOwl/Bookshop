@@ -3,36 +3,6 @@
 <aside id="notice"><%=notice%></aside>
 <% end %>
 
-<h2> Your Bookshop Cart </h2>
-
-<!--<% if notice %>
-    <aside id="notice"><%= notice %></aside>
-<% end %> -->
-
-<table>
-
-    <% @cart.line_items.each do |line_item| %>
-    <tr>
-    <td class="quantity"> <%= line_item.quantity %></td>
-    <td><%= line_item.book.title %></td>
-    <td class="price"><%= number_to_currency(line_item.total_price)%></td>
-    </tr>
-    <% end %>
-    <tfoot>
-    <tr>
-    <th colspan="2">Total:</th>
-    <td class="price"><%= number_to_currency(@cart.total_price)%></td>
-    </tr>
-    </tfoot>
-    </table>
-</article>
-
-
-<%= link_to 'Edit', edit_cart_path(@cart) %> |
-<%= link_to 'Back', shops_index_path %>
-
-
-<%= button_to 'Empty cart', @cart, method: :delete, data: { confirm: 'Are you sure?' } %>
 
 
 
@@ -163,7 +133,7 @@
                                    <%= item.book.title %>
                                    
                                     </td>
-									<td class="column-3"><%= item.book.price %></td>
+									<td class="column-3">£<%= item.book.price %></td>
 									<td class="column-4">
 										<div class="wrap-num-product flex-w m-l-auto m-r-0">
 											<div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
@@ -178,7 +148,7 @@
 										</div>
                                         
 									</td>
-									<td class="column-5"><%= item.book.price * item.quantity %></td>
+									<td class="column-5">£<%= item.book.price * item.quantity %></td>
 								</tr>
                                 <% end %>
 							</table>
@@ -200,7 +170,7 @@
 								Update Cart
 							</div>
                             
-							<button type="button" class="btn btn-outline-danger"><%= button_to 'Empty cart', @cart, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+							
 							
                             
 						</div>
@@ -284,10 +254,16 @@
 								</span>
 							</div>
 						</div>
+                        <div class="actions">
 
-						<button class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
-							Proceed to Checkout
-						</button>
+                        <%= button_to '', orders_checkout_path, method: :get, class: "checkout" %>
+
+
+                        <button type="button" class="btn btn-outline-success"><%= button_to 'Checkout', new_order_path, method: :get, class: "checkout" %></button>
+                        <br>
+                        <br>
+                        <button type="button" class="btn btn-outline-danger"><%= button_to 'Empty cart', @cart, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+                        </div>
 					</div>
 				</div>
 			</div>

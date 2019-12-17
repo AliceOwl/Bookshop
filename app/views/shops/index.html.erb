@@ -103,19 +103,16 @@ input[type=text]:focus {
                 <tr>
                   <td><%= book.title %></td>
                   <td><%= book.author %></td>
-                  <td><%= book.avg_rating %></td>
+                  <td><%= book.avg_rating %>/5</td>
                   <td>£<%= book.price %></td>
 				          <td><%= image_tag("http://covers.openlibrary.org/b/isbn/#{book.isbn}-S.jpg") %></td>
 
                   
                   <td><button type="button" class="btn btn-outline-info"><%= link_to 'Show', book %></button></td>
-                  <!--<%= form_for @order_item do |f|%>
-                  <%= f.hidden_field :book_id, :value => book.id %>
-                  <td><%= f.number_field :quantity, :value => 1, :main => 1%></td> -->
-                  <!--<td><button type="button" class="btn btn-outline-success"><%= f.submit ""%>Add to Cart</button></td> -->
+                  
                   <td><%= button_to "Add To Cart".html_safe, line_items_path(book_id: book), remote: true, class: "btn btn-outline-success" %></td>
 
-                  <% end %> 
+                  
                    <% if user_signed_in? %>
                    <% if current_user.admin == true %>
                     <td><button type="button" class="btn btn-outline-dark"><%= link_to 'Edit', edit_book_path(book) %></button></td>
@@ -139,8 +136,6 @@ input[type=text]:focus {
                 <br>
           
             </div>
-
-                <%= link_to "#{current_order.order_items.size} items with a value of £", carts_path%>
         </div>
       </div>
     </div>

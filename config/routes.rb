@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :orders
   resources :line_items
   resources :carts
   get 'carts/show'
@@ -34,7 +35,7 @@ Rails.application.routes.draw do
   get 'line_items/create'
   
   
-  
+  get 'orders/checkout'
 
 
 
