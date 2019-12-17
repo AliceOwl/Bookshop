@@ -1,6 +1,6 @@
 # Bookshelf Web App
 
-![](_screenshots/homepage.png)
+![](/readme_screenshots/homepage.png)
 
 
 ## ABOUT THE PROJECT:
