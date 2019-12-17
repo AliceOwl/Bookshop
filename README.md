@@ -1,6 +1,6 @@
-# SocStats Web App
+# Bookshelf Web App
 
-![](_screenshots/landing.png)
+![](_screenshots/homepage.png)
 
 
 ## ABOUT THE PROJECT:
@@ -17,10 +17,10 @@ This idea of this project if a welcoming e-bookshop, where the users feel comfor
 
 In addition to that, Users are enabled to sign up/login/ to get their personal accounts and each user can perform CRUD (Create, Read, Update, Delete) operations with their accounts. Users also have notifications and alers on their actions; each user can access their profile, settings, notes (enabling them to CRUD posts - a useful feature to create a shopping/reading list or leave themselves/others a memo). Admin Users have an additional menu item in drop-down: Admin Controls, wehre they can monitor the statistics about the website, users, orders, purchases, etc. and extract the data in the format needed. 
 
-Admin Account: "Admin"
+Admin Account: "admin@gmail.com"
 Password: "password"
 
-User Account: "User"
+User Account: "user@example.com"
 Password: "testpassword"
 
 ## TARGET USERS:
@@ -219,10 +219,10 @@ _in database.yml change production database adapter from sqlite3 to postgresql a
 
 ## Development Process:
 
-The application was developed within a few weeks, adapting agile methodology to the limitations of a small project. 
+The application was developed within a few weeks, adapting agile methodology to the limitations of a small project: Discover, Design, Develop, Deliver. Each stege (sprint) started with planning and ended with testing. 
 
 
-**Sprint1:	Dataset search and application design**
+**Sprint 1:	Dataset search and application design**
 
 The users stories were designed and analysed. Non-Functional requirements were addeded. For example:
 The dataset should contain a few linked tables, optimised for better data processing.
@@ -233,68 +233,56 @@ The system should be accessible and intuitive to use.
 
 The dataaset was linked to two other tables (users and orders), based on the assumption that the images will come from live data and there is no need to store them. However, the missing values for e-commerce were seeded in. Rails is known for quick web development, but slow peformance. Taking into account Heroku limitation of 10000 records and tight project scedule, so the amount of total records was limited to around 4,500 values.
 
-**Iteration 2.	Database Design and Development**
+**Sprint 2.	Database Design and Development**
 
-3 Linked tables (=models) were created with Rails Active Records: books, orders and users. SQLite3 was used for local DB development and Rails Active Record associations were used to link the models (tables) according to the database design principles (source: https://www.oreilly.com/library/view/access-database-design/0596002734/ch04.html)
-DB scaffolding turned out to be challenging initially there were 123 columns which were later cut down to 30 (top-level categories). Linking two different dataset was a madatory task to minimise parent-child tables attributes/data conflicts while seeding the data from two datasets.
+3 Linked tables (=models) were created with Rails Active Records: books, orders and users. SQLite3 was used for local DB development and Rails Active Record associations were used to link the models (tables) according to the database design principles (source: https://www.oreilly.com/library/view/access-database-design/0596002734/ch04.html). By the end of the development there were 6 tables in use: books (for opend data and as a resource to sell), users (for users with different priviliges), posts (to enable and test the basic user),  and also carts, orders and line_items for e-commerce.
+The inital tables created and seeded on the local machine and Heriku were different from those at the end, as the structure of the project was altered throguhout the development process. 
 
-**Iteration 3.	Application Development**
+**Sprint 3.	Application Development**
 
 The application was developed with Ruby on Rails, using Model-View-COntroller (MVC) architecture pattern.
 GitHub was used for version control, using projects-automated kanban chart for tasks monitoring.
-Bootstrap templates and themes were implemented for GUI (for optimization of development within the deadline). The Grayscale Bootstrap template was adapted for modification: #sass syntax@import for optimization of website performance by compiling the CSS into one file that is served to the browser. 
+Bootstrap templates and themes were implemented for GUI (for optimization of development within the deadline). The Cozastore Bootstrap template was adapted for modification: #sass syntax@import for optimization of website performance by compiling the CSS into one file that is served to the browser. 
 >CSS has an import option that lets you split your CSS into smaller, more maintainable portions. The only drawback is that >each time you use @import in CSS it creates another HTTP request. Sass builds on top of the current CSS @import but instead >of requiring an HTTP request, Sass will take the file that you want to import and combine it with the file you're importing >into so you can serve a single CSS file to the web browser. Source: https://sass-lang.com/guide
-The template integration process caused a number of bugs that have been continiously fixed throughout the project.
+The template integration process caused a number of bugs that have been continiously fixed throughout the project. One of those was related to javascript: the template js files had to remain untouched due to compatibility issues. 
 
-DataWrapper, Amcharts and Highcharts were embedded for data visualization enhance the learning experience and build up on it in future development. 
+Kickcharts were embedded for data visualization enhance the learning experience and provide the users with the analytical perspective of the data used.  
 
 ![](_screenshots/map.png)
 
 Heroku for deployment of the application. Heroku required PostgreSQL as a database adapter for deployment, so it has been switching throughout the project. Kept crashign throughout the project as new configurations were added
-![](_screenshots/config_yml.png)
+![](_screenshots/dbadapters.png)
 
 
-Another controller/view was generated for analysis because it is connected to all the models.
-To retrieve live data, used HTTParty gem to get the response from the guardian api. The response is parsed into json format to import the data based on the hash and key values. The team has also attempted to retrieve the data from http://hdr.undp.org/en using AJAX, JSON and API keys, but the process was stgnated in bugs, so The Guardian was chosen to retrieve the data from instead for the task completion, all other attepmts were commented/cut for further development.
+The main page (home) contains a grid of 16 random books from the open dataset and images(book covers) from the Open Library API, matched through ISBN. However, not all of them were matching, so some placeholders were left blank. Most of the potential solutions found included JS, which was not working properly with this app, so it was postpone till the main issue is debugged.
 
-
-![](_screenshots/livedata.png)
+![](_screenshots/home_content.png)
 
 
 **Iteration 3.	Debugging and Documentation**
 
-The project task did not require testing, so only black box testing was implemented for quality assurance. The project has got through several debugging processed, as some of the gems and packages were causing conflicts, others were not responsive/not suitable for rails. A lot of them were related to JSON, gems, Bootstrap of Heroku. Some parts of the code were left unfinished and commented for future development. All sources are referenced in the code comments, including media files. 
+A lot of testing for this project was done as black-box testing, due to the anount of GUI to be tested, missing documentation (nothing for template, some gems got outdated, etc), so it was perfect for quick quality assurance, However, tergeting reliability and predictability, some unit tests have been performed, using rspec and automated tests. Last checked, there were 15/15 tests passed on rspec and 28/33. Example below:
 
-SocStats was designed as a fat client application due to the advanced GUI interface, low server requirements, better multimedia performance: one of the goals was to make the data access and analysis easier for regular users, so responsiveness of the application and its high performance were prioritised. 
+![](_screenshots/tests.png)
 
+There were quite a few challenges and issues to face and debug, some of them were fixed, some of them partially fixed and the scope not covered/to be fixed was documented for future releases.The project has got through several debugging processed, as some of the gems and packages were causing conflicts, others were not responsive/not suitable for rails. A lot of them were related to JSON, gems, Bootstrap of Heroku. Some parts of the code were left unfinished and commented for future development. All sources are referenced in the code comments, including media files. 
 
+## Security
+
+The security in the app is focused on protection sensitive user's data and priviliged access to modify the data avaliable. The User's security is layered between unathorised (Guest), User and Admin. Guests can register to get an account. Regular authenticated users can access their account profiles, check/change their information, create posts, available to other authenticated users. Admin Users in addition to the drop-down user's menu have access to admin controls. where they can modify the data, orders, users, see statistics, and extract & downloaf the data needed. The different level of access is empowered bu gem Devise. In addition to this, it uses  bcrypt, which stores user's passwords im the database as a secure hashed value.                                                                                                                                                                                                                                                                                       
 
 ## Issues (partial implementation):
 
 In this section the partially implemented features of the application are listed. These functionalities are currently under development stage, and are to be improved. Pull requests and issues raised will be much appreciated. 
 
-* http://socstats-spices.herokuapp.com/  - for proper displaying the link has to be strictly http, NOT https: this project does not have ssl licence yet, so in the secure browsing regime some items will not display as expected
-* The download of dataset is avaliable only in JSON format for now. 
-* The detailed highcharts per country are availabe via country links in the table:
+The main issues/points to be coverd in the next release:
 
-![](_screenshots/highcharts.png)
-However, at the moment the highcharts display disappears on refresh and a user has to go back to reload it again.
-* Used Helper methods to retrieve the data from the models, due to unsolvable issues, we migrated to ActiveRecord methods and queries 
-* Download the entire data to json format. Click on download, redirects to page with json object and download option available only on reload the page. - future development
-* Exception handling 
->(a special kind of object, an instance of the class Exception or a descendant of that class that represents some kind of >exceptional condition; it indicates that something has gone wrong. When this occurs, an exception is raised (or thrown).) 
-was partially implemented
-
-- Javascript has be fixed: most/all of the files are not recognized in the .erb files. 
-- Charts are not displaying properly.
-- Cart is not functioning properly.
-- Heroku deploy must
+- Javascript has be fixed: most/all of the files are not recognized in the .erb files or vice versa.
 - Google Books API to be implemented (for reading preview)
-- Stories section to be replaced by ds
-- Live Data works only where ISBN is matching. 
+- Stories section to be replaced by live data 
 - A Method to replace mismatching ISBN image holders from live data with a default image is left for future development.
-- More enhanced test and debugging needs to be done.
 - User posts and profile functionalities have to be altered. 
+- Enable more functioning buttons (at the moment the cart can bee accessed only via "add to cart" button in shop (nav bar)
 
 
 **Future potential:**

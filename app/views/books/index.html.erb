@@ -105,9 +105,9 @@ input[type=text]:focus {
               </thead>
               <tbody>
               
-             <% cache @books do %>
+             
               <% @books.each do |book| %>
-               <% cache book do %>
+              
                 <tr>
                   <td><%= book.title %></td>
                   <td><%= book.author %></td>
@@ -126,8 +126,7 @@ input[type=text]:focus {
                   <td><button type="button" class="btn btn-outline-danger"><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
                 <% end %>
                 <% end %>
-                <% end %>
-                <% end %>
+               
           
                 </tr>
               <% end %>
@@ -157,21 +156,13 @@ input[type=text]:focus {
                 </div>
                 <div class="card-body">
                   <div class="chart-area">
-
                     <%= bar_chart Book.group(:avg_rating).count %>
-
                   </div>
                   <hr>
-                  
-                
                 </div>
               </div>
-
               <!-- Bar Chart -->
-              
-
             </div>
-
             <!-- Donut Chart -->
             <div class="col-xl-4 col-lg-5">
               <div class="card shadow mb-4">
@@ -182,18 +173,14 @@ input[type=text]:focus {
                 <!-- Card Body -->
                 <div class="card-body">
                   <div class="chart-pie pt-4">
-                   <%= pie_chart Book.group(:language_code).count %>
-
+                   <%= pie_chart Book.group(:language_code).count %>        
                   </div>
-                  <hr>
-                 
+                  <hr>    
                 </div>
               </div>
             </div>
           </div>
-
         </div>
-
           </div>
 				</div>
 			</div>
