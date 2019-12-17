@@ -1,6 +1,6 @@
 # SocStats Web App
 
-![](readme_screenshots/landing.png)
+![](_screenshots/landing.png)
 
 
 ## ABOUT THE PROJECT:
@@ -109,6 +109,9 @@ The CSV library provides a complete interface to CSV files and data.
 
 Reduces boot times through caching; required in config/boot.rb
 ```gem 'bootsnap', '>= 1.4.2', require: false```
+
+
+```gem 'rspec-rails', '~> 3.9'```
 
 **Gems that did NOT work out (error 500):**
 
@@ -245,17 +248,17 @@ The template integration process caused a number of bugs that have been continio
 
 DataWrapper, Amcharts and Highcharts were embedded for data visualization enhance the learning experience and build up on it in future development. 
 
-![](readme_screenshots/map.png)
+![](_screenshots/map.png)
 
 Heroku for deployment of the application. Heroku required PostgreSQL as a database adapter for deployment, so it has been switching throughout the project. Kept crashign throughout the project as new configurations were added
-![](readme_screenshots/config_yml.png)
+![](_screenshots/config_yml.png)
 
 
 Another controller/view was generated for analysis because it is connected to all the models.
 To retrieve live data, used HTTParty gem to get the response from the guardian api. The response is parsed into json format to import the data based on the hash and key values. The team has also attempted to retrieve the data from http://hdr.undp.org/en using AJAX, JSON and API keys, but the process was stgnated in bugs, so The Guardian was chosen to retrieve the data from instead for the task completion, all other attepmts were commented/cut for further development.
 
 
-![](readme_screenshots/livedata.png)
+![](_screenshots/livedata.png)
 
 
 **Iteration 3.	Debugging and Documentation**
@@ -274,7 +277,7 @@ In this section the partially implemented features of the application are listed
 * The download of dataset is avaliable only in JSON format for now. 
 * The detailed highcharts per country are availabe via country links in the table:
 
-![](readme_screenshots/highcharts.png)
+![](_screenshots/highcharts.png)
 However, at the moment the highcharts display disappears on refresh and a user has to go back to reload it again.
 * Used Helper methods to retrieve the data from the models, due to unsolvable issues, we migrated to ActiveRecord methods and queries 
 * Download the entire data to json format. Click on download, redirects to page with json object and download option available only on reload the page. - future development
