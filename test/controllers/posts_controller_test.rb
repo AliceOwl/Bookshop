@@ -3,16 +3,21 @@ require 'test_helper'
 class PostsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @post = posts(:one)
+    @email = User.new(email: 'testemail@books.com')
   end
 
   test "should get index" do
+    if @email === true
     get posts_url
     assert_response :success
+    end
   end
 
   test "should get new" do
+    if @email === true
     get new_post_url
     assert_response :success
+    end
   end
 
   test "should create post" do
