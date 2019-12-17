@@ -248,7 +248,7 @@ The template integration process caused a number of bugs that have been continio
 
 Kickcharts were embedded for data visualization enhance the learning experience and provide the users with the analytical perspective of the data used.  
 
-![](_screenshots/map.png)
+![](/readme_screenshots/about_charts.png)
 
 Heroku for deployment of the application. Heroku required PostgreSQL as a database adapter for deployment, so it has been switching throughout the project. Kept crashign throughout the project as new configurations were added
 ![](_screenshots/dbadapters.png)
@@ -256,16 +256,16 @@ Heroku for deployment of the application. Heroku required PostgreSQL as a databa
 
 The main page (home) contains a grid of 16 random books from the open dataset and images(book covers) from the Open Library API, matched through ISBN. However, not all of them were matching, so some placeholders were left blank. Most of the potential solutions found included JS, which was not working properly with this app, so it was postpone till the main issue is debugged.
 
-![](_screenshots/home_content.png)
+![](/readme_screenshots/home_content.png)
 
 
 **Iteration 3.	Debugging and Documentation**
 
 A lot of testing for this project was done as black-box testing, due to the anount of GUI to be tested, missing documentation (nothing for template, some gems got outdated, etc), so it was perfect for quick quality assurance, However, tergeting reliability and predictability, some unit tests have been performed, using rspec and automated tests. Last checked, there were 15/15 tests passed on rspec and 28/33. Example below:
 
-![](_screenshots/tests.png)
+![](/readme_screenshots/tests.png)
 
-There were quite a few challenges and issues to face and debug, some of them were fixed, some of them partially fixed and the scope not covered/to be fixed was documented for future releases.The project has got through several debugging processed, as some of the gems and packages were causing conflicts, others were not responsive/not suitable for rails. A lot of them were related to JSON, gems, Bootstrap of Heroku. Some parts of the code were left unfinished and commented for future development. All sources are referenced in the code comments, including media files. 
+There were quite a few challenges and issues to face and debug, some of them were fixed, some of them partially fixed and the scope not covered/to be fixed was documented for future releases.The project has got through several debugging processed, as some of the gems and packages were causing conflicts, others were not responsive/not suitable for rails. A lot of them were related to JSON, gems, Bootstrap of Heroku. Some parts of the code were left unfinished and commented for future development. All sources are referenced in the code comments, including media files. More illustrations can be found in /readme_screenshots
 
 ## Security
 
